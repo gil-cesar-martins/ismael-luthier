@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section id="hero">
+        <div class="hero-container">
+            <div data-aos="fade-in">
+                <div class="hero-logo">
+                    <img class="" src="{% static 'img/logo2.png' %}" alt="Logo">
+                </div>
+
+                <h1>Erro 500</h1>
+                <h2><span class="typed" data-typed-items="Erro de processamento!, Para voltar clique no botão"></span></h2>
+                <div class="actions">
+                    <a href="{% url 'index' %}" class="btn-get-started">Volte para a página inicial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

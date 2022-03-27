@@ -1,0 +1,64 @@
+{% load static %}
+<section id="contact">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title"><i class="bi bi-envelope-fill"></i> Entre em Contato  <i class="bi bi-whatsapp"></i></h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description">Compareça à oficina para prestigiar o show room, envie e-mal ou whatsapp</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-4">
+          <div class="info">
+            <div>
+              <i class="bi bi-geo-alt"></i>
+              <p>A108 Elm Street, NY</p>
+            </div>
+
+            <div>
+              <i class="bi bi-envelope"></i>
+              <p>info@example.com</p>
+            </div>
+
+            <div>
+              <i class="bi bi-phone"></i>
+              <p>+55 31 997836206</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-8">
+          <div class="form">
+            <form id="contato" autocomplete="off" method="post" action="{% url 'index' %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <input type="text"  name="nome" class="form-control" id="nome" placeholder="Seu nome" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="email" autocomplete="off" class="form-control" name="email" id="email" placeholder="Seu e-mail" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" autocomplete="off"  class="form-control" name="assunto" id="assunto" placeholder="Assunto" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" autocomplete="off"  id="mensagem" name="mensagem" rows="5" placeholder="Mensagem" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
+            </form>
+          </div>
+        </div>
+        <!-- Ao utilizar mensagens, desmarque -->   
+        {% if messages %}
+          {% for m in messages %}
+            <div class="alert alert-{{ m }}">
+              <button type="button" class="close" data-dismiss="alert"></button>
+              <strong>{{ m }}</strong>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+</section>
