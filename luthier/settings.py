@@ -84,8 +84,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'luthier',
-        'USER': 'bilu',
-        'PASSWORD': 'V1v@2022',
+        'USER': '<nome_do_usuario>',    # Digite o nome do usuário do banco de dados
+        'PASSWORD': '<senha>',          #Digite a senha
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -145,8 +145,8 @@ EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = 'no-reply@bilu.com'
 EMAIL_USE_TSL = True
-EMAIL_HOST_PASSWORD = 'fusion'
-DEFAULT_FROM_EMAIL = 'bilu@gmail.com'
+EMAIL_HOST_PASSWORD = '<senha>'
+DEFAULT_FROM_EMAIL = '<email_qualquer>'
 """
 
 # Default primary key field type
@@ -155,3 +155,16 @@ DEFAULT_FROM_EMAIL = 'bilu@gmail.com'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGOUT_REDIRECT_URL = 'index'
+
+# Recursos Extras de Segurança do Django
+SECURE_HSTS_SECONDS = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+X_FRAME_OPTIONS = 'DENY'
+
+# Quando estiver desenvolvendo localmente, o recurso abaixo deve ser comentado com um #
+SECURE_SSL_REDIRECT = True
