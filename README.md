@@ -1,8 +1,6 @@
 # ismael-luthier
 Projeto de divulgação de serviços de um profissional luthier.
 
-Aplicativo web de divulgação de um bar fictício.
-
 ### Deploy local 
 Instale as seguinte bibliotecas com o comando pip:
 
